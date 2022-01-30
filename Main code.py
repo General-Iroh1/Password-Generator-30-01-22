@@ -1,10 +1,10 @@
 UserWordInput = []
 i = 0
 while i < 3:
-    word = input('Enter A Word you want your password te be a mixture of(The maximum is 3): ')
+    word = input("Enter A Word you want your password te be a mixture of(The maximum is 3): ")
     UserWordInput.append(word)
 
-    choice = input('Would you like to enter another word? Press y if you do, and n if you dont: ')
+    choice = input("Would you like to enter another word? Press y if you do, and n if you dont: ")
     if choice.casefold() == 'n':
         break
     if choice.casefold() == 'y':
@@ -16,5 +16,5 @@ while i < 3:
 
 for element in UserWordInput:
         print(element)
-
+print ("tutie")
 
