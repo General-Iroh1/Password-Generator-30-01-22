@@ -14,6 +14,6 @@ while i < 3:
         break
 
 
-for element in UserWordInput:
-        print(element)
+AllWords = UserWordInput[0, 1, 2]
+#Search on google "How to print lists" for error
 
