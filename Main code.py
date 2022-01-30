@@ -16,5 +16,4 @@ while i < 3:
 
 for element in UserWordInput:
         print(element)
-print ("tutie")
 
