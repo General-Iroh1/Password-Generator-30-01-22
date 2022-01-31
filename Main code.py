@@ -15,5 +15,5 @@ while i < 3:
 
 
 AllWords = UserWordInput[0, 1, 2]
-#Search on google "How to print lists" for error
+#Search on google "How to print lists" for error (31/01/22)
 
