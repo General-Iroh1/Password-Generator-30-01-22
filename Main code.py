@@ -1,4 +1,8 @@
-from dataclasses import replace
+
+
+
+
+from os import sep
 
 
 UserWordInput = []
@@ -17,9 +21,8 @@ while i < 3:
         print ("Sorry, you have typed a wrong input.")
         break
 
-
 #Search on google "How to print lists" for error (31/01/22)
-print (*UserWordInput, sep ='')
-print (UserWordInput.reverse)
 
-
+WordConnector = ""
+VariableForList=(WordConnector.join(UserWordInput[:: -1]))
+print (VariableForList)
