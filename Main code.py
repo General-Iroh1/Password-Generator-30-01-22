@@ -1,10 +1,3 @@
-
-
-
-
-from os import sep
-
-
 UserWordInput = []
 i = 0
 while i < 3:
@@ -21,8 +14,17 @@ while i < 3:
         print ("Sorry, you have typed a wrong input.")
         break
 
-#Search on google "How to print lists" for error (31/01/22)
+
 
 WordConnector = ""
 VariableForList=(WordConnector.join(UserWordInput[:: -1]))
-print (VariableForList)
+VariableForList = VariableForList.replace('i', "!")
+VariableForList = VariableForList.replace('a', "@")
+VariableForList = VariableForList.replace('o', "0")
+VariableForList = VariableForList.replace('q', "9")
+VariableForList = VariableForList.replace('e', "£")
+VariableForList = VariableForList.replace('u', "ⓤ")
+VariableForList.join()
+
+print ("Pro".join(VariableForList))
+
