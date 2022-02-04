@@ -1,3 +1,4 @@
+#while loop
 UserWordInput = []
 i = 0
 while i < 3:
@@ -11,20 +12,21 @@ while i < 3:
     if choice.casefold() == 'y':
         i += 1
     else:
-        print ("Sorry, you have typed a wrong input.")
+        print ("Sorry, you have typed a wrong input. The Password you have generated so far is: ")
         break
 
-
-
+#Removes all commas/brackets/apostraphes
 WordConnector = ""
 VariableForList=(WordConnector.join(UserWordInput[:: -1]))
+#Replacing words with symbols/numbers
 VariableForList = VariableForList.replace('i', "!")
 VariableForList = VariableForList.replace('a', "@")
 VariableForList = VariableForList.replace('o', "0")
 VariableForList = VariableForList.replace('q', "9")
 VariableForList = VariableForList.replace('e', "£")
 VariableForList = VariableForList.replace('u', "ⓤ")
-VariableForList.join()
-
-print ("Pro".join(VariableForList))
+#joining numbers to end and start of password
+WordJoin="11"
+VariableforJoining = VariableForList.join(WordJoin)
+print (VariableforJoining)
 
