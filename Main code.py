@@ -1,4 +1,5 @@
 #while loop
+import sys
 
 UserWordInput = []
 i = 0
@@ -16,8 +17,8 @@ while True:
     if choice.casefold() == 'yes':
         continue
     else:
-        print ("Sorry, you have typed a wrong input.")
-    break
+        print ("Sorry, you have typed a wrong input, your input has been counted as 'yes'")
+    continue
     
 
 #Removes all commas/brackets/apostraphes
@@ -35,3 +36,8 @@ VariableForList = VariableForList.replace('u', "U")
 print ("The password you have created is:", VariableForList)
 
 
+
+stdoutOrigin=sys.stdout 
+sys.stdout = open("Password Saver.txt", "w")
+sys.stdout.close()
+sys.stdout=stdoutOrigin
