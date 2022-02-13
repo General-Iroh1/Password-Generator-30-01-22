@@ -1,6 +1,16 @@
-#while loop
-import sys
 
+import sys
+from colorama import Fore
+#counts how many times the code has been run
+count = 0
+
+def code_to_run():
+  print("Running code")
+  global count
+  count +=1
+import sys
+from colorama import Fore
+#while loop
 UserWordInput = []
 i = 0
 n = 0
@@ -17,30 +27,29 @@ while True:
     if choice.casefold() == 'yes':
         continue
     else:
-        print ("Sorry, you have typed a wrong input, which would you like? No or Yes?")
+        print (Fore.GREEN, "Sorry, you have typed a wrong input, which would you like? No or Yes?")
         wronginput = input("Input either 'yes' or 'no'\n")
         if wronginput == "yes":
             continue
         if wronginput == "no":
             break
         else:
-            print("You have misspelled either 'yes' or 'no', please try again")
-            wronginput2 = input("yes or no?")
+            print(Fore.YELLOW,"You have misspelled either 'yes' or 'no', please try again")
+            wronginput2 = input("yes or no?\n")
             if wronginput2 == "no":
                 break
             if wronginput2 == "yes":
                 continue
             else:
-                print("You have one more try until you have to restart the program, please enter either yes or no very carefully.⚠️ IF YOU MISSPELL AGAIN, YOU WILL NOT GET ANOTHER TRY!\n")
-                wronginput3 = input("")
+                print(Fore.RED,"You have one more try until you have to restart the program, please enter either yes or no very carefully.⚠️ IF YOU MISSPELL AGAIN, YOU WILL NOT GET ANOTHER TRY!\n")
+                wronginput3 = input("last try, yes or no?\n")
                 if wronginput3 == "yes":
                     continue
                 if wronginput3 == "no":
                     break
                 else:
-                    print("You have misspelled 3 times, please restart the program.")
-
-    continue
+                    print(Fore.BLACK,"You have misspelled 3 times, please restart the program to input more words.")
+                    break
     
 
 #Removes all commas/brackets/apostraphes
@@ -55,14 +64,15 @@ VariableForList = VariableForList.replace('e', "E")
 VariableForList = VariableForList.replace('u', "U")
 
 #joining numbers to end and start of password
-print ("The password you have created is:", VariableForList)
+print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList)
 
 
-
+print(Fore.WHITE,"")
 reason = input("Why are you using this password?\n")
 sys.stdout = open("Password Saver.txt", "a")
-sys.stdout.write ("\n")
 sys.stdout.write (reason)
 sys.stdout.write (" password is: ")
 sys.stdout.write (VariableForList)
+sys.stdout.write (" You have ran the code {} times/time".format(count))
+sys.stdout.write ("\n")
 
