@@ -1,13 +1,22 @@
+from __future__ import print_function
 
-import sys
-from colorama import Fore
-#counts how many times the code has been run
-count = 0
 
-def code_to_run():
-  print("Running code")
-  global count
-  count +=1
+import atexit
+from os import path
+from json import dumps, loads
+
+
+def read_counter():
+    return loads(open("counter.json", "r").read()) + 1 if path.exists("counter.json") else 0
+
+
+def write_counter():
+    with open("counter.json", "w") as f:
+        f.write(dumps(counter))
+
+
+counter = read_counter()
+atexit.register(write_counter)
 import sys
 from colorama import Fore
 #while loop
@@ -73,6 +82,5 @@ sys.stdout = open("Password Saver.txt", "a")
 sys.stdout.write (reason)
 sys.stdout.write (" password is: ")
 sys.stdout.write (VariableForList)
-sys.stdout.write (" You have ran the code {} times/time".format(count))
+sys.stdout.write (" You have ran the code {} times/time".format(counter))
 sys.stdout.write ("\n")
-
