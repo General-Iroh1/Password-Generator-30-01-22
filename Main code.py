@@ -44,16 +44,16 @@ while True:
         else:
             print(Fore.YELLOW,"You have misspelled either 'yes' or 'no', please try again")
             wronginput2 = input("yes or no?\n")
-            if wronginput2 == "no":
+            if wronginput2.casefold == "no":
                 break
-            if wronginput2 == "yes":
+            if wronginput2.casefold == "yes":
                 continue
             else:
                 print(Fore.RED,"You have one more try until you have to restart the program, please enter either yes or no very carefully.⚠️ IF YOU MISSPELL AGAIN, YOU WILL NOT GET ANOTHER TRY!\n")
                 wronginput3 = input("last try, yes or no?\n")
-                if wronginput3 == "yes":
+                if wronginput3.casefold == "yes":
                     continue
-                if wronginput3 == "no":
+                if wronginput3.casefold == "no":
                     break
                 else:
                     print(Fore.LIGHTBLACK_EX,"You have misspelled 3 times, please restart the program to input more words.")
@@ -77,13 +77,12 @@ VariableForList = VariableForList.replace('u', "U")
 VariableForList = VariableForList.replace('s', "$")
 VariableForList = VariableForList.replace('S', "$")
 #joining numbers to end and start of password
-print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList, "*Saved*")
+print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList, "*Saved*\n")
 
-print(Fore.WHITE,"")
+print (Fore.WHITE)
 reason = input("Why are you using this password?\n")
 sys.stdout = open("Password Saver.rtf", "a")
-sys.stdout.write (Back.LIGHTBLUE_EX)
-sys.stdout.write (reason)
+sys.stdout.write ("\\rtf1 ")
 sys.stdout.write (" password is: ")
 sys.stdout.write (VariableForList)
 sys.stdout.write ("\n\tYou have ran the code {} times/time\n".format(counter))
