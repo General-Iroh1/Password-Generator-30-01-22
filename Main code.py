@@ -1,9 +1,6 @@
-from __future__ import print_function
 import atexit
 from os import path
 from json import dumps, loads
-from simple_colors import *
-from termcolor import colored
 
 
 def read_counter():
@@ -83,9 +80,8 @@ print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList, "
 
 print (Fore.WHITE)
 reason = input("Why are you using this password?\n")
-reason = colored(reason)
-sys.stdout = open("Password Saver.txt", "a")
-print (reason)
+sys.stdout = open("Password Saver.rtf", "a+")
+sys.stdout.write (reason)
 sys.stdout.write (" password is: ")
 sys.stdout.write (VariableForList)
 sys.stdout.write ("\n\tYou have ran the code {} times/time\n".format(counter))
