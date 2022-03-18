@@ -1,0 +1,1 @@
+working with elif, and trying to make sure that stregnth guesser with Symbols work.

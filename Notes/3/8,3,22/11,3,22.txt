@@ -1,0 +1,1 @@
+finished counting special characters using .isalpha and .isdigit (edit: Or so i thought...)

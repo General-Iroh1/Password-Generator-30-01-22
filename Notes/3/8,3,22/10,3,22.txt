@@ -1,0 +1,1 @@
+Fixed not letting the user input yes after 2nd and 3rd wrong input, and figuring out ways to count symbols, attempting to use 'count' funtion.
