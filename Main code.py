@@ -1,8 +1,6 @@
 import atexit
 from os import path
 from json import dumps, loads
-
-
 def read_counter():
     return loads(open("counter.json", "r").read()) + 1 if path.exists("counter.json") else 1
 
@@ -15,7 +13,7 @@ def write_counter():
 counter = read_counter()
 atexit.register(write_counter)
 import sys
-from colorama import Fore, Back, Style
+from colorama import Fore
 #while loop
 UserWordInput = []
 i = 0
@@ -36,23 +34,23 @@ while True:
     else:
         print (Fore.GREEN, "Sorry, you have typed a wrong input, which would you like? No or Yes?")
         wronginput = input("Input either 'yes' or 'no'\n")
-        if wronginput == "yes":
+        if wronginput == "yes".casefold():
             continue
-        if wronginput == "no":
+        if wronginput == "no".casefold():
             break
         else:
             print(Fore.YELLOW,"You have misspelled either 'yes' or 'no', please try again")
             wronginput2 = input("yes or no?\n")
-            if wronginput2.casefold == "no":
+            if wronginput2 == "no".casefold():
                 break
-            if wronginput2.casefold == "yes":
+            if wronginput2 == "yes".casefold():
                 continue
             else:
                 print(Fore.RED,"You have one more try until you have to restart the program, please enter either yes or no very carefully.⚠️ IF YOU MISSPELL AGAIN, YOU WILL NOT GET ANOTHER TRY!\n")
                 wronginput3 = input("last try, yes or no?\n")
-                if wronginput3.casefold == "yes":
+                if wronginput3 == "yes".casefold():
                     continue
-                if wronginput3.casefold == "no":
+                if wronginput3== "no".casefold():
                     break
                 else:
                     print(Fore.LIGHTBLACK_EX,"You have misspelled 3 times, please restart the program to input more words.")
@@ -79,20 +77,79 @@ VariableForList = VariableForList.replace('S', "$")
 print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList, "*Saved*\n")
 
 print (Fore.WHITE)
-reason = input("Why are you using this password?\n")
-sys.stdout = open("Password Saver.rtf", "a+")
-sys.stdout.write (reason)
-sys.stdout.write (" password is: ")
-sys.stdout.write (VariableForList)
-sys.stdout.write ("\n\tYou have ran the code {} times/time\n".format(counter))
+Count = len(VariableForList)
 
-count = len(VariableForList)
-if count == 1 or count == 2 or count == 3 or count == 4 or count == 0:
-    print("\tThis password is - Weak")
-    print("\tThe length of this password is: ", count, "characters long\n")
-if count == 5 or count == 6 or count == 7 or count == 8 or count == 9:
-    print("\tThis password is - Average")
-    print("\tThe length of this password is: ", count, "characters long\n")
-if count == 10 or count == 11 or count == 12 or count == 13 or count == 15 or count == 16 or count == 17 or count == 18 or count == 19 or count == 20:
-    print("\tThis password is - Strong")
-    print("\tThe length of this password is: ", count, "characters long\n")
+SpecialCharacters = (0)
+countcomparison1  =(0)
+countcomparison2  =(5)
+countcomparison3  =(10)
+countcomparison4  =(999)
+SymbolCountComparison1 =0
+SymbolCountComparison2 =(2)
+SymbolCountComparison3 =(3)
+SymbolCountComparison4 =(999)
+SpecialCharacters += sum(c.isspace() for c in VariableForList)
+for letter in range(len(VariableForList)):
+    if(VariableForList[letter].isalpha()):
+        SpecialCharacters = SpecialCharacters + 0
+    elif(VariableForList[letter].isdigit()):
+        SpecialCharacters = SpecialCharacters + 1
+    else:
+        SpecialCharacters = SpecialCharacters + 1
+reason = input("Why are you using this password?\n")
+file = open("Password Saver.rtf", "a+")
+file = open("Password Saver.rtf", "r+")
+occ = 0
+
+for line in file:
+    line = line.casefold()
+    words = line.split(" ")
+    for word in words:
+        if word == reason:
+           occ +=  1
+        else:
+            continue
+if occ > 1 or occ == 1:
+    Duplicate = input("You have already made a password with that reason,would you like to write it again?\n")
+    if Duplicate == "yes".casefold():   
+        file = open("Password Saver.rtf", "a+")
+        file.write (reason)
+        file.write (" password is: ")
+        file.write (VariableForList)
+        file.write ("\n\tYou have ran the code {} times/time\n".format(counter))
+        if countcomparison1 < Count < countcomparison2 and SpecialCharacters > SymbolCountComparison1:
+            file.write("\tThis password is - Weak\n")
+            file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
+            file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+            quit()
+        if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCountComparison2:
+            file.write("\tThis password is - Average\n")
+            file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
+            file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+            quit()
+        if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3:
+            file.write("\tThis password is - Strong\n")
+            file.write("\tThe length of this password is: "+ str(Count) + "characters long\n")
+            file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+    if Duplicate == "no".casefold():
+        quit()
+    else:
+        quit()
+
+
+file.write (reason)
+file.write (" password is: ")
+file.write (VariableForList)
+file.write ("\n\tYou have ran the code {} times/time\n".format(counter))
+if countcomparison1 < Count < countcomparison2 and SpecialCharacters > SymbolCountComparison1:
+    file.write("\tThis password is - Weak\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
+    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+if countcomparison2 < Count < countcomparison3 and SymbolCountComparison1 < SpecialCharacters < SymbolCountComparison2:
+    file.write("\tThis password is - Average\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
+    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+if Count >= countcomparison3 and SymbolCountComparison3 < SpecialCharacters < SymbolCountComparison4:
+    file.write("\tThis password is - Strong\n")
+    file.write("\tThe length of this password is: "+str(Count) +"characters long\n")
+    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters)+ "\n")
