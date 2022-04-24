@@ -13,17 +13,7 @@ for line in file:
             continue
 if occ > 1 or occ == 1:
     Duplicate = input("You have already made a password with that reason,would you like to write it again?\n")
-    if Duplicate == "yes".casefold():
-        for line in file:
-            line = line.casefold()
-            words = line.split(" ")
-            for word in words:
-                if word == reason.casefold():
-                    occ +=  1
-                else:
-                    continue
-    else:
-        quit()
+    
 file.close()
 from os import path
 from json import dumps, loads
