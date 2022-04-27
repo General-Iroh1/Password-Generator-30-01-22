@@ -14,8 +14,12 @@ for line in file:
 if occ >= 1:
     Duplicate = input("You have already made a password with that reason,would you like to write it again?\n")
     if Duplicate == "no":
-        text = file.read().replace(reason, "\n")
-file = text
+        with open(file) as f:
+            myKeyword = reason
+            myNewLine = "The New line i want reason to be replaced with\n"
+            f.seek(0)
+
+
 from os import path
 from json import dumps, loads
 def read_counter():
