@@ -1,25 +1,11 @@
 reason = input("Why would you like to use this password?\n")
-file = open("Password Saver.rtf", "a+")
-file = open("Password Saver.rtf", "r+")
+f = open("Password Saver.rtf", "a+")
+f = open("Password Saver.rtf", "r+")
 occ = 0
-
-for line in file:
-    line = line.casefold()
-    words = line.split()
-    for word in words:
-        if word == reason.casefold():
-           occ +=  1
-           break
-
-if occ >= 1:
-    Duplicate = input("You have already made a password with that reason,would you like to write it again?\n")
-    if Duplicate == "no":
-        with open(file) as f:
-            myKeyword = reason
-            myNewLine = "The New line i want reason to be replaced with\n"
-            f.seek(0)
-
-
+f = open("Password Saver.rtf", "a+")
+CPStorage = input("Would you like to clear the password storage?\n")
+if CPStorage == "yes".casefold():
+        f.write("Cleared!")
 from os import path
 from json import dumps, loads
 def read_counter():
