@@ -2,10 +2,11 @@ reason = input("Why would you like to use this password?\n")
 f = open("Password Saver.rtf", "a+")
 f = open("Password Saver.rtf", "r+")
 occ = 0
-f = open("Password Saver.rtf", "a+")
 CPStorage = input("Would you like to clear the password storage?\n")
 if CPStorage == "yes".casefold():
-        f.write("Cleared!")
+    f.truncate(0)    
+    f.write("Cleared!")
+
 from os import path
 from json import dumps, loads
 def read_counter():
