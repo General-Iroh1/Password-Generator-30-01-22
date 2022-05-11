@@ -2,11 +2,12 @@ reason = input("Why would you like to use this password?\n")
 f = open("Password Saver.rtf", "a+")
 f = open("Password Saver.rtf", "r+")
 occ = 0
-for line in f:
-    for word in f:
-        if word == reason:
-            occ += 1
-        occ += 1
+with open(f, 'r') as f:
+    for line in f:
+        words = line.split()
+        for i in words:
+            if(i==reason):
+                occ+=1
 from os import path
 from json import dumps, loads
 def read_counter():
