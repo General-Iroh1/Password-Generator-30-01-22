@@ -10,13 +10,15 @@ with open("Password Saver.rtf", "r+") as f:
             if(i==reason):
                 occ+=1
 if occ == 1 or 1 > occ:
-    input ("Would you like to rewrite your password with the reason of", reason, "?")
-
+    Dupe = input ("Would you like to rewrite your password with the reason of", reason, "?\n")
+    if Dupe == "yes".casefold():
+        newword = "\n"
+        if reason in f:
+            ()
 from os import path
 from json import dumps, loads
 def read_counter():
     return loads(open("counter.json", "r").read()) + 1 if path.exists("counter.json") else 1
-
 
 def write_counter():
     with open("counter.json", "w") as f:
