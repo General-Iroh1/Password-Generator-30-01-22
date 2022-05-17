@@ -3,18 +3,12 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 file.close()
 occ = 0
-with open("Password Saver.rtf", "r+") as f:
-    for line in f:
+ques = input("Which part of the storage would you like to remove (Just enter the reason, ItS cAsE sEnSiTiVe!)?\n")
+for line in f:
         words = line.split()
         for i in words:
-            if(i==reason):
-                occ+=1
-if occ == 1 or 1 > occ:
-    Dupe = input ("Would you like to rewrite your password with the reason of", reason, "?\n")
-    if Dupe == "yes".casefold():
-        newword = "\n"
-        if reason in f:
-            ()
+            if i == ques:
+                
 from os import path
 from json import dumps, loads
 def read_counter():
