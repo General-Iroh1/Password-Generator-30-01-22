@@ -8,7 +8,7 @@ for line in f:
         words = line.split()
         for i in words:
             if i == ques:
-                
+                ques.replace(reason, "\n")
 from os import path
 from json import dumps, loads
 def read_counter():
