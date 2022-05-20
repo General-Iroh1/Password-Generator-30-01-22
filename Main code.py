@@ -8,7 +8,7 @@ for line in f:
         words = line.split()
         for i in words:
             if i == ques:
-                ques.replace(reason, "\n")
+                i.replace(reason, "\n")
 from os import path
 from json import dumps, loads
 def read_counter():
@@ -109,6 +109,7 @@ for letter in range(len(VariableForList)):
         SpecialCharacters = SpecialCharacters + 1
     else:
         SpecialCharacters = SpecialCharacters + 1
+
 file = open("Password Saver.rtf", "a+")
 file.write (reason)
 file.write (" password is: ")
