@@ -18,7 +18,6 @@ def write_counter():
     with open("counter.json", "w") as f:
         f.write(dumps(counter))
 
-
 counter = read_counter()
 from colorama import Fore
 #while loop
