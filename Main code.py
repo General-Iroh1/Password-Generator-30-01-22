@@ -3,12 +3,16 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 file.close()
 occ = 0
-ques = input("Which part of the storage would you like to remove (Just enter the reason, ItS cAsE sEnSiTiVe!)?\n")
-for line in f:
+ques = input("If you would like to replace a paragraph with empty space, please enter the reason you desire to replace.\n")
+file = open("Password Saver.rtf", "r+")
+for line in file:
         words = line.split()
         for i in words:
             if i == ques:
-                i.replace(reason, "\n")
+                NewLine = i.replace(reason, "\n")
+                replacement = NewLine + "\n"
+                file.write (replacement)
+                break
 from os import path
 from json import dumps, loads
 def read_counter():
