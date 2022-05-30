@@ -3,16 +3,46 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 file.close()
 occ = 0
-ques = input("If you would like to replace a paragraph with empty space, please enter the reason you desire to replace.\n")
-file = open("Password Saver.rtf", "r+")
-for line in file:
+
+with open("Password Saver.rtf", "r+") as f:
+    for line in f:
         words = line.split()
         for i in words:
-            if i == ques:
-                NewLine = i.replace(reason, "\n")
-                replacement = NewLine + "\n"
-                file.write (replacement)
-                break
+            if(i==reason):
+                occ+=1
+if occ == 1 or 1 > occ:
+    Dupe = input ("Would you like to rewrite your password with the reason of", reason, "?\n")
+    #creating a variable and storing the text
+    # that we want to search
+    search_text = reason
+    
+    # creating a variable and storing the text
+    # that we want to add
+    replace_text = "\n"
+  
+    # Opening our text file in read only
+    # mode using the open() function
+    with open(r'SampleFile.txt', 'r') as file:
+  
+        # Reading the content of the file
+        # using the read() function and storing
+        #them in a new variable
+        data = file.read()
+  
+    # Searching and replacing the text
+    # using the replace() function
+    data = data.replace(search_text, replace_text)
+  
+# Opening our text file in write only
+# mode to write the replaced content
+with open(r'SampleFile.txt', 'w') as file:
+  
+    # Writing the replaced data in our
+    # text file
+    file.write(data)
+  
+# Printing Text replaced
+print("Text replaced")
 from os import path
 from json import dumps, loads
 def read_counter():
