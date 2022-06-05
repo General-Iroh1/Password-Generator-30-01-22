@@ -10,39 +10,41 @@ with open("Password Saver.rtf", "r+") as f:
         for i in words:
             if(i==reason):
                 occ+=1
-if occ == 1 or 1 > occ:
-    Dupe = input ("Would you like to rewrite your password with the reason of", reason, "?\n")
-    #creating a variable and storing the text
-    # that we want to search
-    search_text = reason
+
+if occ == 1 or 1 < occ:
+    with open("NewFile4Testing", "r+") as f:
+        for i in f:
+            #importing Path class.
+            from pathlib import Path
     
-    # creating a variable and storing the text
-    # that we want to add
-    replace_text = "\n"
   
-    # Opening our text file in read only
-    # mode using the open() function
-    with open(r'SampleFile.txt', 'r') as file:
+    #
+    #
+            def replacetext(search_text, replace_text):
   
-        # Reading the content of the file
-        # using the read() function and storing
-        #them in a new variable
-        data = file.read()
+    # 
+                file = Path("NewFile4Testing.rtf")
   
-    # Searching and replacing the text
-    # using the replace() function
-    data = data.replace(search_text, replace_text)
+    # 
+    # 
+                data = file.read_text()
   
-# Opening our text file in write only
-# mode to write the replaced content
-with open(r'SampleFile.txt', 'w') as file:
+    # 
+                data = data.replace(search_text, replace_text)
+    # 
+    # 
+                file.write_text(data)
   
-    # Writing the replaced data in our
-    # text file
-    file.write(data)
-  
-# Printing Text replaced
-print("Text replaced")
+    # 
+        # 
+        # 
+                search_text = reason
+        #
+        #
+                replace_text = "\n"
+#
+#
+                print(replacetext(search_text, replace_text))
 from os import path
 from json import dumps, loads
 def read_counter():
