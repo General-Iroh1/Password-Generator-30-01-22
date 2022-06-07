@@ -3,48 +3,18 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 file.close()
 occ = 0
+import os
 
-with open("Password Saver.rtf", "r+") as f:
-    for line in f:
-        words = line.split()
-        for i in words:
-            if(i==reason):
-                occ+=1
+with open("Password Saver.txt", "r") as input:
+    with open("temp.txt", "w") as output:
+        # iterate all lines from file
+        for line in input:
+            # if text matches then don't write it
+            if line.strip("\n") != "text to delete":
+                output.write(line)
 
-if occ == 1 or 1 < occ:
-    with open("NewFile4Testing", "r+") as f:
-        for i in f:
-            #importing Path class.
-            from pathlib import Path
-    
-  
-    #
-    #
-            def replacetext(search_text, replace_text):
-  
-    # 
-                file = Path("NewFile4Testing.rtf")
-  
-    # 
-    # 
-                data = file.read_text()
-  
-    # 
-                data = data.replace(search_text, replace_text)
-    # 
-    # 
-                file.write_text(data)
-  
-    # 
-        # 
-        # 
-                search_text = reason
-        #
-        #
-                replace_text = "\n"
-#
-#
-                print(replacetext(search_text, replace_text))
+# replace file with original name
+os.replace('WhereTheDeletedWordsGo.txt', 'Password Saver.txt')
 from os import path
 from json import dumps, loads
 def read_counter():
