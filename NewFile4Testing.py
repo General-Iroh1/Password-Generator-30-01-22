@@ -1,4 +1,10 @@
-with open("NewFile4Testing.txt", "rt") as fin:
-    with open("out.txt", "wt") as fout:
-        for line in fin:
-            fout.write(line.replace("python", "\n"))
+with open("NewFileForTesting.txt",'r') as file:
+    lines = file.readlines()
+
+with open("NewFileForTesting.txt",'w') as file:
+    for line in lines:
+        # find() returns -1 if no match is found
+        if line.find("diana") != -1:
+            pass
+        else:
+            file.write(line)

@@ -3,18 +3,19 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 file.close()
 occ = 0
-import os
+with open("Password Saver.rtf",'r') as file:
+    lines = file.readlines()
 
-with open("Password Saver.txt", "r") as input:
-    with open("temp.txt", "w") as output:
-        # iterate all lines from file
-        for line in input:
-            # if text matches then don't write it
-            if line.strip("\n") != "text to delete":
-                output.write(line)
-
-# replace file with original name
-os.replace('WhereTheDeletedWordsGo.txt', 'Password Saver.txt')
+with open("Password Saver.rtf",'a+') as file:
+    for line in lines:
+        if line.find(reason) != -1:
+            pass
+            pass
+            pass
+            pass
+            pass
+        else:
+            file.write(line)
 from os import path
 from json import dumps, loads
 def read_counter():
@@ -39,9 +40,9 @@ while True:
 
     choice = input("Would you like to enter another word? Type 'yes' if you do, and 'no' if you dont\n")
 
-    if choice.casefold() == 'no':
+    if choice == 'no'.casefold():
         break
-    if choice.casefold() == 'yes':
+    if choice == 'yes'.casefold():
         continue
     else:
         print (Fore.GREEN, "Sorry, you have typed a wrong input, which would you like? No or Yes?")
