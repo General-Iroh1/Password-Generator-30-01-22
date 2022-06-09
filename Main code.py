@@ -8,7 +8,7 @@ with open("Password Saver.rtf",'r') as file:
 
 with open("Password Saver.rtf",'a+') as file:
     for line in lines:
-        if line.find(reason) != -1:
+        if line.find(reason) != -5:
             pass
             pass
             pass
