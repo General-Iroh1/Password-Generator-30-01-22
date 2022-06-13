@@ -1,21 +1,16 @@
 reason = input("Why would you like to use this password?\n")
 f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
-file.close()
-occ = 0
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
 
-with open("Password Saver.rtf",'a+') as file:
-    for line in lines:
-        if line.find(reason) != -5:
-            pass
-            pass
-            pass
-            pass
+occ = 0
+
+for line in file:
+    if reason in line:
+        for reason in range(4):
             pass
         else:
             file.write(line)
+str(reason)
 from os import path
 from json import dumps, loads
 def read_counter():
@@ -123,13 +118,13 @@ file.write (VariableForList)
 file.write ("\n\tYou have ran the code {} times/time\n".format(counter))
 if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison1:
     file.write("\tThis password is - Weak\n")
-    file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
-    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
 if countcomparison2 < Count < countcomparison3  or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison2:
     file.write("\tThis password is - Average\n")
-    file.write("\tThe length of this password is: "+ str(Count)+ "characters long\n")
-    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters) + "\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
 if Count > countcomparison3 or Count == countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3:
     file.write("\tThis password is - Strong\n")
-    file.write("\tThe length of this password is: "+str(Count) +"characters long\n")
-    file.write("\tThe amount of special characters in your password is:"+ str(SpecialCharacters)+ "\n")
+    file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
