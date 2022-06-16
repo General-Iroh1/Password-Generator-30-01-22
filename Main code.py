@@ -1,15 +1,62 @@
 reason = input("Why would you like to use this password?\n")
 f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
-
 occ = 0
+One = False
+Two = False
+Three = False
+# remove a line containing a string
+with open("Password Saver.rtf",'r') as file:
+    lines = file.readlines()
 
-for line in file:
-    if reason in line:
-        for reason in range(4):
+with open("Password Saver.rtf",'w') as file:
+    for line in lines:
+        # find() returns -1 if no match is found
+        if line.find(reason) != -1:
             pass
         else:
             file.write(line)
+            One = True
+
+if One == True:
+    # remove a line containing a string
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+
+        with open("Password Saver.rtf",'w') as file:
+            for line in lines:
+        # find() returns -1 if no match is found
+                if line.find("You") in range(1,5) != -1:
+                    pass
+                else:
+                    file.write(line)
+                    Two = True
+if  Two == True:
+    # remove a line containing a string
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+
+        with open("Password Saver.rtf",'w') as file:
+            for line in lines:
+        # find() returns -1 if no match is found
+                if line.find("This") in range(1, 5) != -1:
+                    pass
+                else:
+                    file.write(line)
+                    Three = True
+if  Three == True:
+    # remove a line containing a string
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+
+        with open("Password Saver.rtf",'w') as file:
+            for line in lines:
+        # find() returns -1 if no match is found
+                if line.find("The") in range (1 , 5) != -1:
+                    pass
+                else:
+                    file.write(line)
+                    Three = True
 str(reason)
 from os import path
 from json import dumps, loads
