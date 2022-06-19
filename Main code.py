@@ -8,7 +8,6 @@ Three = False
 # remove a line containing a string
 with open("Password Saver.rtf",'r') as file:
     lines = file.readlines()
-
 with open("Password Saver.rtf",'w') as file:
     for line in lines:
         # find() returns -1 if no match is found
@@ -16,47 +15,7 @@ with open("Password Saver.rtf",'w') as file:
             pass
         else:
             file.write(line)
-            One = True
 
-if One == True:
-    # remove a line containing a string
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-
-        with open("Password Saver.rtf",'w') as file:
-            for line in lines:
-        # find() returns -1 if no match is found
-                if line.find("You") in range(1,5) != -1:
-                    pass
-                else:
-                    file.write(line)
-                    Two = True
-if  Two == True:
-    # remove a line containing a string
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-
-        with open("Password Saver.rtf",'w') as file:
-            for line in lines:
-        # find() returns -1 if no match is found
-                if line.find("This") in range(1, 5) != -1:
-                    pass
-                else:
-                    file.write(line)
-                    Three = True
-if  Three == True:
-    # remove a line containing a string
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-
-        with open("Password Saver.rtf",'w') as file:
-            for line in lines:
-        # find() returns -1 if no match is found
-                if line.find("The") in range (1 , 5) != -1:
-                    pass
-                else:
-                    file.write(line)
-                    Three = True
 str(reason)
 from os import path
 from json import dumps, loads
