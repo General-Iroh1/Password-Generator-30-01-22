@@ -13,8 +13,49 @@ with open("Password Saver.rtf",'w') as file:
         # find() returns -1 if no match is found
         if line.find(reason) != -1:
             pass
-        else:
-            file.write(line)
+        One == True
+    else:
+        file.write(line)
+if One == True:
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+    with open("Password Saver.rtf",'w') as file:
+        for line in file:
+        # find() returns -1 if no match is found
+            if line.find("You have ran the code") != -1:
+                pass
+            else:
+                file.write(line)
+if One == True:
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+    with open("Password Saver.rtf",'w') as file:
+        for line in file:
+        # find() returns -1 if no match is found
+            if line.find("This password is") != -1:
+                pass
+            else:
+                file.write(line)
+if One == True:
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+    with open("Password Saver.rtf",'w') as file:
+        for line in file:
+        # find() returns -1 if no match is found
+            if line.find("The length of this password is") != -1:
+                pass
+            else:
+                file.write(line)
+if One == True:
+    with open("Password Saver.rtf",'r') as file:
+        lines = file.readlines()
+    with open("Password Saver.rtf",'w') as file:
+        # find() returns -1 if no match is found
+        for line in file:
+            if line.find("The amount of special characters in your password is") != -1:
+                pass
+            else:
+                file.write(line)
 
 str(reason)
 from os import path
