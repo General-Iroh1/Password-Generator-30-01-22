@@ -5,6 +5,8 @@ occ = 0
 One = False
 Two = False
 Three = False
+Four = False
+file.write("This is a placeholder.\n")
 # remove a line containing a string
 with open("Password Saver.rtf",'r') as file:
     lines = file.readlines()
@@ -13,49 +15,8 @@ with open("Password Saver.rtf",'w') as file:
         # find() returns -1 if no match is found
         if line.find(reason) != -1:
             pass
-        One == True
-    else:
-        file.write(line)
-if One == True:
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-    with open("Password Saver.rtf",'w') as file:
-        for line in file:
-        # find() returns -1 if no match is found
-            if line.find("You have ran the code") != -1:
-                pass
-            else:
-                file.write(line)
-if One == True:
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-    with open("Password Saver.rtf",'w') as file:
-        for line in file:
-        # find() returns -1 if no match is found
-            if line.find("This password is") != -1:
-                pass
-            else:
-                file.write(line)
-if One == True:
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-    with open("Password Saver.rtf",'w') as file:
-        for line in file:
-        # find() returns -1 if no match is found
-            if line.find("The length of this password is") != -1:
-                pass
-            else:
-                file.write(line)
-if One == True:
-    with open("Password Saver.rtf",'r') as file:
-        lines = file.readlines()
-    with open("Password Saver.rtf",'w') as file:
-        # find() returns -1 if no match is found
-        for line in file:
-            if line.find("The amount of special characters in your password is") != -1:
-                pass
-            else:
-                file.write(line)
+        else:
+            file.write(line)
 
 str(reason)
 from os import path
@@ -71,7 +32,6 @@ counter = read_counter()
 from colorama import Fore
 #while loop
 UserWordInput = []
-i = 0
 n = 0
 while True:
     print(Fore.WHITE,"")
@@ -81,7 +41,6 @@ while True:
         break
 
     choice = input("Would you like to enter another word? Type 'yes' if you do, and 'no' if you dont\n")
-
     if choice == 'no'.casefold():
         break
     if choice == 'yes'.casefold():
@@ -110,8 +69,6 @@ while True:
                 else:
                     print(Fore.LIGHTBLACK_EX,"You have misspelled 3 times, please restart the program to input more words.")
                     break
-                
-    
 
 #Removes all commas/brackets/apostraphes
 WordConnector = ""
