@@ -2,10 +2,6 @@ reason = input("Why would you like to use this password?\n")
 f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 occ = 0
-One = False
-Two = False
-Three = False
-Four = False
 file.write("This is a placeholder.\n")
 # remove a line containing a string
 with open("Password Saver.rtf",'r') as file:
@@ -124,11 +120,28 @@ if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and 
     file.write("\tThis password is - Weak\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
-if countcomparison2 < Count < countcomparison3  or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison2:
+    quit()
+elif countcomparison1 < Count < countcomparison2:
+    file.write("\tThis password is - Weak\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    quit()
+if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCountComparison2 or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison2:
     file.write("\tThis password is - Average\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
-if Count > countcomparison3 or Count == countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3:
+    quit()
+elif countcomparison2 < Count < countcomparison3 or Count == countcomparison2:
+    file.write("\tThis password is - Average\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    quit()
+if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3 or Count == countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3:
+    file.write("\tThis password is - Strong\n")
+    file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
+    quit()
+elif Count > countcomparison3 or Count == countcomparison3:
     file.write("\tThis password is - Strong\n")
     file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
