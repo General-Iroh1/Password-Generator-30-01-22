@@ -3,12 +3,10 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 occ = 0
 file.write("This is a placeholder.\n")
-# remove a line containing a string
 with open("Password Saver.rtf",'r') as file:
     lines = file.readlines()
 with open("Password Saver.rtf",'w') as file:
     for line in lines:
-        # find() returns -1 if no match is found
         if line.find(reason) != -1:
             pass
         else:
@@ -93,7 +91,7 @@ countcomparison1  =(0)
 countcomparison2  =(5)
 countcomparison3  =(10)
 countcomparison4  =(999)
-SymbolCountComparison1 =0
+SymbolCountComparison1 =(0)
 SymbolCountComparison2 =(2)
 SymbolCountComparison3 =(3)
 text = open("Password Saver.rtf", "a+")
@@ -122,7 +120,7 @@ if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and 
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     quit()
 elif countcomparison1 < Count < countcomparison2:
-    file.write("\tThis password is - Weak\n")
+    file.write("\tThis password is - Slightly less than weak\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     quit()
@@ -132,7 +130,7 @@ if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCou
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     quit()
 elif countcomparison2 < Count < countcomparison3 or Count == countcomparison2:
-    file.write("\tThis password is - Average\n")
+    file.write("\tThis password is - Slightly less than average\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     quit()
@@ -142,6 +140,6 @@ if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3 or Sp
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
     quit()
 elif Count > countcomparison3 or Count == countcomparison3:
-    file.write("\tThis password is - Strong\n")
+    file.write("\tThis password is - Slightly less than strong\n")
     file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
