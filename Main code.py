@@ -12,7 +12,7 @@ with open("Password Saver.rtf",'w') as file:
         else:
             file.write(line)
 
-str(reason)
+str(reason) 
 from os import path
 from json import dumps, loads
 def read_counter():
