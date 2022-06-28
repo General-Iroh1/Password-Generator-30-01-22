@@ -3,46 +3,14 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 occ = 0
 file.write("This is a placeholder.\n")
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
-with open("Password Saver.rtf",'w') as file:
+reason = "google"
+with open("Password Saver.rtf",'rb') as IN, open("DeletionPlace.rtf",'wb') as OUT:
+    lines = IN.readlines()
     for line in lines:
-        if line.find(reason) != -1:
+        if line.find(reason) != -1: # If not found, as you wrote
             pass
         else:
-            file.write(line)
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
-with open("Password Saver.rtf",'w') as file:
-    for line in lines:
-        if line.find("You have ran the code") != -1:
-            pass
-        else:
-            file.write(line)
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
-with open("Password Saver.rtf",'w') as file:
-    for line in lines:
-        if line.find("This password is") != -1:
-            pass
-        else:
-            file.write(line)
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
-with open("Password Saver.rtf",'w') as file:
-    for line in lines:
-        if line.find("The length of this password is") != -1:
-            pass
-        else:
-            file.write(line)
-with open("Password Saver.rtf",'r') as file:
-    lines = file.readlines()
-with open("Password Saver.rtf",'w') as file:
-    for line in lines:
-        if line.find("The amount of special characters in your password is") != -1:
-            pass
-        else:
-            file.write(line)
+             OUT.write(line)
 
 str(reason) 
 from os import path
