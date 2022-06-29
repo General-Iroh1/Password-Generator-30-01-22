@@ -3,14 +3,13 @@ f = open("Password Saver.rtf", "a+")
 file = open("Password Saver.rtf", "r+")
 occ = 0
 file.write("This is a placeholder.\n")
-reason = "google"
-with open("Password Saver.rtf",'rb') as IN, open("DeletionPlace.rtf",'wb') as OUT:
-    lines = IN.readlines()
-    for line in lines:
-        if line.find(reason) != -1: # If not found, as you wrote
-            pass
+with open("Password Saver.rtf", "r+", encoding='utf-8') as file:
+    for line in file:
+        if line.find(reason) != -1:
+            for _ in range(4):
+                next(file)
         else:
-             OUT.write(line)
+            print(line.rstrip())
 
 str(reason) 
 from os import path
