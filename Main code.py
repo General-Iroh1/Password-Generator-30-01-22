@@ -5,11 +5,16 @@ occ = 0
 file.write("This is a placeholder.\n")
 with open("Password Saver.rtf", "r+", encoding='utf-8') as file:
     for line in file:
+        str(reason)
         if line.find(reason) != -1:
+            str(reason)
             for _ in range(4):
+                str(reason)
                 next(file)
-        else:
-            print(line.rstrip())
+            else:
+                Things2Keep = (line.rstrip())
+                f = open("Password Saver.rtf", "w")
+                f.write(Things2Keep)
 
 str(reason) 
 from os import path
