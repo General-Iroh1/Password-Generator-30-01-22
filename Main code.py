@@ -5,11 +5,9 @@ occ = 0
 file.write("This is a placeholder.\n")
 with open("Password Saver.rtf", "r+", encoding='utf-8') as file:
     for line in file:
-        str(reason)
         if line.find(reason) != -1:
             str(reason)
-            for _ in range(4):
-                str(reason)
+            for reason in range(4):
                 next(file)
             else:
                 Things2Keep = (line.rstrip())
@@ -114,6 +112,7 @@ for letter in range(len(VariableForList)):
         SpecialCharacters = SpecialCharacters + 1
 
 file = open("Password Saver.rtf", "a+")
+str(reason)
 file.write (reason)
 file.write (" password is: ")
 file.write (VariableForList)
