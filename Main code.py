@@ -1,18 +1,16 @@
 reason = input("Why would you like to use this password?\n")
-f = open("Password Saver.rtf", "a+")
-file = open("Password Saver.rtf", "r+")
+f = open("Password Saver.txt", "a+")
+file = open("Password Saver.txt", "r+")
 occ = 0
-file.write("This is a placeholder.\n")
-with open("Password Saver.rtf", "r+", encoding='utf-8') as file:
+with open("Password Saver.txt", 'r', encoding='utf-8') as file:
     for line in file:
         if line.find(reason) != -1:
             str(reason)
             for reason in range(4):
+                str(reason)
                 next(file)
-            else:
-                Things2Keep = (line.rstrip())
-                f = open("Password Saver.rtf", "w")
-                f.write(Things2Keep)
+        else:
+            print(line.rstrip())
 
 str(reason) 
 from os import path
@@ -96,7 +94,7 @@ countcomparison4  =(999)
 SymbolCountComparison1 =(0)
 SymbolCountComparison2 =(2)
 SymbolCountComparison3 =(3)
-text = open("Password Saver.rtf", "a+")
+text = open("Password Saver.txt", "a+")
 l = text.readlines()
 for i in l:
     if i == VariableForList:
@@ -111,7 +109,7 @@ for letter in range(len(VariableForList)):
     else:
         SpecialCharacters = SpecialCharacters + 1
 
-file = open("Password Saver.rtf", "a+")
+file = open("Password Saver.txt", "a+")
 str(reason)
 file.write (reason)
 file.write (" password is: ")
