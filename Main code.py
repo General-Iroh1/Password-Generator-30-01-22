@@ -1,18 +1,23 @@
-reason = input("Why would you like to use this password?\n")
-f = open("Password Saver.txt", "a+")
-file = open("Password Saver.txt", "r+")
-occ = 0
-with open("Password Saver.txt", 'r', encoding='utf-8') as file:
-    for line in file:
-        if line.find(reason) != -1:
-            str(reason)
-            for reason in range(4):
-                str(reason)
-                next(file)
-        else:
-            print(line.rstrip())
+import shutil
 
-str(reason) 
+
+reason = input("Why would you like to use this password?\n")
+f = open(reason, "a+")
+file = open(reason, "r+")
+file.write("This is a placeholder.\n")
+occ = 0
+with open(reason, "r+") as f:
+    for lines in f:
+        for word in lines.split():
+            if word == reason:
+                occ += 1
+if occ >= 1:
+    rewrite = input("Would you like to rewrite the password for:"+ reason+ "?\n")
+    if rewrite == "yes":
+        f = open(reason, "a+")
+        f.truncate(0)
+f = open(reason, "a+")
+shutil.move(f, "Password file folder")
 from os import path
 from json import dumps, loads
 def read_counter():
@@ -94,7 +99,7 @@ countcomparison4  =(999)
 SymbolCountComparison1 =(0)
 SymbolCountComparison2 =(2)
 SymbolCountComparison3 =(3)
-text = open("Password Saver.txt", "a+")
+text = open(reason, "a+")
 l = text.readlines()
 for i in l:
     if i == VariableForList:
@@ -109,7 +114,7 @@ for letter in range(len(VariableForList)):
     else:
         SpecialCharacters = SpecialCharacters + 1
 
-file = open("Password Saver.txt", "a+")
+file = open(reason, "a+")
 str(reason)
 file.write (reason)
 file.write (" password is: ")
