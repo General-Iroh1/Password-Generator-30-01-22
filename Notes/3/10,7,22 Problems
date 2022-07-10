@@ -1,0 +1,14 @@
+Don't know how to turn variable into path to use shutil.move.
+
+Problem:
+variable for file needing path.
+.move needs path to work.
+    2 paths
+        file to move directory
+        directory to place it in
+
+
+
+
+cant move file into folder.
+path not found but file made.
