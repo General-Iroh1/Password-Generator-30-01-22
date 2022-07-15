@@ -1,0 +1,19 @@
+Hashing
+Turns a password into random letters numbers and symbols.
+One to one mapping - but you can make the hash different.
+One way function.
+Encrypting
+Public Key - Something that everybody is allowed to know, used to encrypt things
+Private key - Something that is used to decrypt things.
+App needs to save key, if hacker hacks into the system they can get the key.
+Ceaser Cipher
+    Using a ceratain amount of letters to decode a message.
+    Use 256 bits to make searching harder.
+Plain Text
+ Worst way to store passwords, as very easy to breach.
+Salting
+Adds random numbers and letters to back of password then hashes.
+Hacking
+    Looks for all common passwords to see if matches hash.
+Slow Hashing
+    Makes hackers guess less per/sec

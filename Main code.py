@@ -1,7 +1,27 @@
-import atexit
+from __future__ import print_function
+import shutil
+from os.path import join
+import os
+reason = input("Why would you like to use this password?\n")
+file= open(reason+".txt", "a+")
+file = open(reason+".txt", "r+")
+file.write("This is a placeholder.\n")
+occ = 0
+with open(reason+".txt", "r+") as file:
+    for lines in file:
+        for word in lines.split():
+            if word == reason:
+                occ += 1
+
+if occ >= 1:
+    rewrite = input("Would you like to rewrite the password for:"+ reason+ "?\n")
+    if rewrite == "yes":
+        file= open(reason+".txt", "a+")
+        file.truncate(0)
+
 from os import path
 from json import dumps, loads
-
+import atexit
 
 def read_counter():
     return loads(open("counter.json", "r").read()) + 1 if path.exists("counter.json") else 1
@@ -14,50 +34,37 @@ def write_counter():
 
 counter = read_counter()
 atexit.register(write_counter)
-import sys
-from colorama import Fore, Back, Style
+from colorama import Fore
 #while loop
 UserWordInput = []
-i = 0
 n = 0
+i = 0
 while True:
     print(Fore.WHITE,"")
-    word = input("Enter A Word you want your password te be a mixture of(The maximum is 3)\n")
+    if i == 7:
+        break
+    word = input("Enter a word you want your password to be a mixture of(The maximum is 3)\n")
     UserWordInput.append(word); n += 1
     if n == 3:
         break
 
     choice = input("Would you like to enter another word? Type 'yes' if you do, and 'no' if you dont\n")
-
-    if choice.casefold() == 'no':
+    if choice == 'no'.casefold():
         break
-    if choice.casefold() == 'yes':
+    if choice == 'yes'.casefold():
         continue
     else:
-        print (Fore.GREEN, "Sorry, you have typed a wrong input, which would you like? No or Yes?")
-        wronginput = input("Input either 'yes' or 'no'\n")
-        if wronginput == "yes":
-            continue
-        if wronginput == "no":
-            break
-        else:
-            print(Fore.YELLOW,"You have misspelled either 'yes' or 'no', please try again")
-            wronginput2 = input("yes or no?\n")
-            if wronginput2.casefold == "no":
+        while i < 6:
+            print (Fore.GREEN, "Sorry, you have typed a wrong input, which would you like? No or Yes?")
+            wronginput = input("Input either 'yes' or 'no'\n")
+            if wronginput == "yes".casefold():
                 break
-            if wronginput2.casefold == "yes":
-                continue
+            if wronginput == "no".casefold():
+                i = 7
+                break
             else:
-                print(Fore.RED,"You have one more try until you have to restart the program, please enter either yes or no very carefully.⚠️ IF YOU MISSPELL AGAIN, YOU WILL NOT GET ANOTHER TRY!\n")
-                wronginput3 = input("last try, yes or no?\n")
-                if wronginput3.casefold == "yes":
-                    continue
-                if wronginput3.casefold == "no":
-                    break
-                else:
-                    print(Fore.LIGHTBLACK_EX,"You have misspelled 3 times, please restart the program to input more words.")
-                    break
-    
+                i += 1
+
 
 #Removes all commas/brackets/apostraphes
 WordConnector = ""
@@ -79,20 +86,137 @@ VariableForList = VariableForList.replace('S', "$")
 print (Fore.LIGHTBLUE_EX,"The password you have created is:", VariableForList, "*Saved*\n")
 
 print (Fore.WHITE)
-reason = input("Why are you using this password?\n")
-sys.stdout = open("Password Saver.rtf", "a+")
-sys.stdout.write (reason)
-sys.stdout.write (" password is: ")
-sys.stdout.write (VariableForList)
-sys.stdout.write ("\n\tYou have ran the code {} times/time\n".format(counter))
+Count = len(VariableForList)
 
-count = len(VariableForList)
-if count == 1 or count == 2 or count == 3 or count == 4 or count == 0:
-    print("\tThis password is - Weak")
-    print("\tThe length of this password is: ", count, "characters long\n")
-if count == 5 or count == 6 or count == 7 or count == 8 or count == 9:
-    print("\tThis password is - Average")
-    print("\tThe length of this password is: ", count, "characters long\n")
-if count == 10 or count == 11 or count == 12 or count == 13 or count == 15 or count == 16 or count == 17 or count == 18 or count == 19 or count == 20:
-    print("\tThis password is - Strong")
-    print("\tThe length of this password is: ", count, "characters long\n")
+SpecialCharacters = (0)
+text = open(reason+".txt", "a+")
+l = text.readlines()
+for i in l:
+    if i == VariableForList:
+        Replacement = i.replace(VariableForList)
+SymbolCountComparison4 =(999)
+SpecialCharacters += sum(c.isspace() for c in VariableForList)
+for letter in range(len(VariableForList)):
+    if(VariableForList[letter].isalpha()):
+        SpecialCharacters = SpecialCharacters + 0
+    elif(VariableForList[letter].isdigit()):
+        SpecialCharacters = SpecialCharacters + 1
+    else:
+        SpecialCharacters = SpecialCharacters + 1
+text.close()
+countcomparison1  =(0)
+countcomparison2  =(5)
+countcomparison3  =(10)
+countcomparison4  =(999)
+SymbolCountComparison1 =(0)
+SymbolCountComparison2 =(2)
+SymbolCountComparison3 =(3)
+
+txt = ".txt"
+reason+(txt)
+file = open(reason+".txt", "a")
+file.write(reason)
+file.write(" password is ")
+file.write(VariableForList)
+file.write("\n\tThe code has been run {} times\n".format(counter))
+if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison1:
+    file.write("\tThis password is - Weak\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)
+    quit()
+elif countcomparison1 < Count < countcomparison2:
+    file.write("\tThis password is - Slightly less than weak\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)
+    quit()
+if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCountComparison2 or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison2:
+    file.write("\tThis password is - Average\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")    
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)
+    quit()
+elif countcomparison2 < Count < countcomparison3 or Count == countcomparison2:
+    file.write("\tThis password is - Slightly less than average\n")
+    file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)
+    quit()
+if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3 or Count == countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3:
+    file.write("\tThis password is - Strong\n")
+    file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)
+    quit()
+elif Count > countcomparison3 or Count == countcomparison3:
+    file.write("\tThis password is - Slightly less than strong\n")
+    file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
+    txt = ".txt"
+    reason = reason + txt
+    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
+    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    FileInFolder = os.path.exists(folderpath)
+    file.close()
+    if FileInFolder == True:
+        os.remove(f2delete)
+    file.close()
+    shutil.move(src, des)

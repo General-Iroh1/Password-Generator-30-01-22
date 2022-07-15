@@ -1,0 +1,4 @@
+fixed process being used elsewhere error (with shutil.copy).
+added src and des for moving file.
+problems using shutil.move() to move file, proccess being used elsewhere error coming up.
+works in test file - but not in main code.

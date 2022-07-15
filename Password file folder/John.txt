@@ -1,0 +1,6 @@
+This is a placeholder.
+John password is k!llEr$
+	The code has been run 1 times
+	This password is - Slightly less than average
+	The length of this password is: 7 characters long
+	The amount of special characters in your password is: 2
