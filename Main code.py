@@ -1,6 +1,6 @@
+from pathlib import Path
 import shutil
-
-
+import os
 reason = input("Why would you like to use this password?\n")
 f = open(reason, "a+")
 file = open(reason, "r+")
@@ -10,14 +10,17 @@ with open(reason, "r+") as f:
     for lines in f:
         for word in lines.split():
             if word == reason:
-                occ += 1
+                occ += 1     
+
 if occ >= 1:
     rewrite = input("Would you like to rewrite the password for:"+ reason+ "?\n")
     if rewrite == "yes":
         f = open(reason, "a+")
         f.truncate(0)
-f = open(reason, "a+")
-shutil.move(f, "Password file folder")
+        f.close()
+
+
+
 from os import path
 from json import dumps, loads
 def read_counter():
@@ -124,28 +127,52 @@ if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and 
     file.write("\tThis password is - Weak\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    f.close()
+    shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+    f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+    os.remove(f2delete)
     quit()
 elif countcomparison1 < Count < countcomparison2:
     file.write("\tThis password is - Slightly less than weak\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    f.close()
+    shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+    f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+    os.remove(f2delete)
     quit()
 if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCountComparison2 or Count == countcomparison2 and SpecialCharacters > SymbolCountComparison2:
     file.write("\tThis password is - Average\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
-    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")    
+    f.close()
+    shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+    f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+    os.remove(f2delete)
     quit()
 elif countcomparison2 < Count < countcomparison3 or Count == countcomparison2:
     file.write("\tThis password is - Slightly less than average\n")
     file.write("\tThe length of this password is: "+ str(Count)+ " characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
+    f.close()
+    shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+    f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+    os.remove(f2delete)
     quit()
 if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3 or Count == countcomparison3 and SpecialCharacters > SymbolCountComparison3 or SpecialCharacters == SymbolCountComparison3:
     file.write("\tThis password is - Strong\n")
     file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
+    f.close()
+    shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+    f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+    os.remove(f2delete)
     quit()
 elif Count > countcomparison3 or Count == countcomparison3:
     file.write("\tThis password is - Slightly less than strong\n")
     file.write("\tThe length of this password is: "+str(Count) +" characters long\n")
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
+f.close()
+shutil.copy("c:/Python Practice/Password-Generator-30-01-22/"+reason, 'C:/Python Practice/Password-Generator-30-01-22/Password file folder and generator')
+f2delete = Path("c:/Python Practice/Password-Generator-30-01-22/"+reason)
+os.remove(f2delete)
