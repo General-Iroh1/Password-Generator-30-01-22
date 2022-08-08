@@ -1,0 +1,11 @@
+When moving folder for password into account folder, the password folder is merged with the account folder.
+When trying to fix it - invald argument error found.
+Fixed error - however folder is still merged.
+Figured out that folder is meant to be merged - as there was no other file in the account folder.
+Making other parts of code follow what i just did.
+
+Next:
+    Create password has to make it in folder
+    Delete password has to view correct folder
+    View password has to view correct folder.
+    Display all screens on 1 screen. (delete everything on screen1 and put things on screen2 there.)

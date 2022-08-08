@@ -1,0 +1,1 @@
+global lets you access variables within a def function outside of the current scope.

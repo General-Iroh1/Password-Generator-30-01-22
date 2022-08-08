@@ -1,0 +1,3 @@
+Struggling to use buttons - as if i make a button, all the files will be on that one button.
+Created a new folder called <USER>s Account and trying to place it in the folder for the user.
+Reason is that if i do not that it will read the password from the folder - and thats the users password.

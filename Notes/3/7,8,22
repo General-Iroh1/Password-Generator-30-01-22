@@ -1,0 +1,7 @@
+added random generate button to signup screen.
+created copy and paste button using screen.clipboard.
+added back button to log in screen
+Made view password screen more neat, however it doen't work now.
+
+Next:
+    Fix view pass button and integrate it into delete.

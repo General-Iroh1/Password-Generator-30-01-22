@@ -1,0 +1,3 @@
+Made view pass button and create pass button work.
+However view pass button also views folders - which creates an error if you try and open it.
+Also finished delete pass button

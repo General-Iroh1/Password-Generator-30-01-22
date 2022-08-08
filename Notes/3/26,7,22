@@ -1,0 +1,10 @@
+Made it so it doesn't display folders anymore when viewing passwords.
+Created back button for viewing.
+If the user has ran the code only one time, it will create a file with the info.
+However, if it has ran twice, it will give an error.
+Created back button for viewing, deleting and creating.
+
+Things to do:
+    Create A register button.
+    Remove the functionality of creating a user when logging in.
+    Change some wording.

@@ -2,11 +2,13 @@ from __future__ import print_function
 import shutil
 from os.path import join
 import os
+
 reason = input("Why would you like to use this password?\n")
 file= open(reason+".txt", "a+")
 file = open(reason+".txt", "r+")
 file.write("This is a placeholder.\n")
 occ = 0
+
 with open(reason+".txt", "r+") as file:
     for lines in file:
         for word in lines.split():
@@ -34,6 +36,7 @@ def write_counter():
 
 counter = read_counter()
 atexit.register(write_counter)
+
 from colorama import Fore
 #while loop
 UserWordInput = []
@@ -45,7 +48,7 @@ while True:
         break
     word = input("Enter a word you want your password to be a mixture of(The maximum is 3)\n")
     UserWordInput.append(word); n += 1
-    if n == 3:
+    if n == 99:
         break
 
     choice = input("Would you like to enter another word? Type 'yes' if you do, and 'no' if you dont\n")
@@ -125,10 +128,10 @@ if countcomparison1 < Count < countcomparison2 or Count == countcomparison2 and 
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:
@@ -142,10 +145,10 @@ elif countcomparison1 < Count < countcomparison2:
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:
@@ -159,10 +162,10 @@ if countcomparison2 < Count < countcomparison3 and SpecialCharacters > SymbolCou
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")    
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:
@@ -176,10 +179,10 @@ elif countcomparison2 < Count < countcomparison3 or Count == countcomparison2:
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters) + "\n")
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:
@@ -193,10 +196,10 @@ if Count > countcomparison3 and SpecialCharacters > SymbolCountComparison3 or Sp
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:
@@ -210,10 +213,10 @@ elif Count > countcomparison3 or Count == countcomparison3:
     file.write("\tThe amount of special characters in your password is: "+ str(SpecialCharacters)+ "\n")
     txt = ".txt"
     reason = reason + txt
-    src = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', reason )
-    des = join('c:/', 'Python Practice/', 'Password-Generator-30-01-22/', 'Password file folder')
-    folderpath = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
-    f2delete = "c:/Python Practice/Password-Generator-30-01-22/Password file folder/"+reason
+    src = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', reason)
+    des = join('d:/', 'Applications/', 'Vscode/', 'Password Manager/', 'Password-Generator-30-01-22/', 'Password file folder')
+    folderpath = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"
+    f2delete = "d:/Applications/Vscode/Password Manager/Password-Generator-30-01-22/Password file folder/"+reason
     FileInFolder = os.path.exists(folderpath)
     file.close()
     if FileInFolder == True:

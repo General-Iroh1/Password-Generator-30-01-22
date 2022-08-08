@@ -1,0 +1,10 @@
+Working on random password generator, (so far done length)
+Letters aren't following length - working to fix.
+using while loop to check if length of password and how many letters have been generated are equal.
+Finished letter generator - now need to stick all the letters together.
+
+
+Next:
+    Figure out why list isn't appending
+    add a button to ask for 3 inputs
+    add symbols to random generated password.

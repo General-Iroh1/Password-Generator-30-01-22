@@ -1,0 +1,11 @@
+What this code does, is it counts if any occurences of the reason for the password - and if it does it removes everything in the file, which makes it seem like its rewriting it.
+Then, it asks for 3 words and replaces certain letters with symbols.
+
+Key = value of password.
+Directly reference key.
+Treats file as giant string. (single)
+Stores all info on 1 password in 1 line. 
+Delete original file - make a new one.
+With giant string looks at if reason is there (it will be in 1 line)
+Stores all of the other lines into a dictionary.
+With the new file it writes everything in the dictionary inside there.

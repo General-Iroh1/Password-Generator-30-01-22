@@ -1,0 +1,8 @@
+Created path variable to file to check if it exists.
+Made login success work (although error appeared.)
+success not entirely working - if wrong password is entered it still says it works.
+Getting error (bad window path name) from button.
+Fixed previous error.
+made login success, user not found and password not recognised work.
+Created little screen that says if you entered a wrong password, username or if it works.
+Finished tutorial 2.

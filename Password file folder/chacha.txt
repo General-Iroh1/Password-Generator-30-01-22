@@ -1,0 +1,6 @@
+This is a placeholder.
+chacha password is n@nn@n@n@n@n@n@n@n@n@n
+	The code has been run 8 times
+	This password is - Strong
+	The length of this password is: 22 characters long
+	The amount of special characters in your password is: 10

@@ -1,0 +1,9 @@
+Error while making register button, expected str, byte or os.pathlike object, not StringVar.
+Created new folder when registering.
+Getting access is denied error when moving file to folder.
+Solved access denied error.
+No file or directory error occuring.
+
+
+Next:
+    Fix no file or directory error.

@@ -1,0 +1,7 @@
+Fixed file not found error.
+View password now views from correct folder.
+Create password button creates file inside correct folder.
+Delete button also views from correct folder.
+
+Next:
+    Make delete pass options and view pass options buttons.

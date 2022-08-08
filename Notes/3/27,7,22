@@ -1,0 +1,18 @@
+Hashing
+    Google which library to use.
+    Encrypt rather than hash?
+Encrypting
+    Cryptography is module
+    Fernet function is how to make a key
+    Keep key in secure file.
+    Use .encode() to encode things
+    encrypt seperately
+    Use .encrypt to encrypt
+    Byte is smallest bit of information
+    Byte is what encrypt is saved as.
+    Different types of encoding - decimals, utf 8 etc.
+    Same key for different pass
+    Encrypt pass and input and compare if they are the same.
+    cryptography library generates salt if pass is same for security.
+    Utf 8 is english
+    Utf 16 is whole world languages.

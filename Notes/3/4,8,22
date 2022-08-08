@@ -1,0 +1,7 @@
+Figured out why list wasn't appending, i reset the list every iteration of the while loop.
+Replaced certain letters with numbers and symbols.
+Showed a label that says 'Your password is - <PASSWORD>' with the randomly generated password.
+
+Next:
+    Add a copy and paste button
+    Add the random generate to sign up area.

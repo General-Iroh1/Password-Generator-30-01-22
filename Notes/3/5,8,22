@@ -1,0 +1,4 @@
+Database - Something that websits store information with
+Dataframe - smaller database that you can use in python.
+.loc can be used to see row - if row is already full, you can replace things, however, it it has not been created, it is going to create  new row.
+you can check for a specific pass / user.
