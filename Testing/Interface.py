@@ -688,18 +688,22 @@ def leave1():
     key = Fernet.generate_key()
     path2 = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry
     os.chdir(path2)
-    with open(Var4UserEntry2+".key", 'wb') as filekey:
+    with open(res2x+".key", 'wb') as filekey:
         filekey.write(key)
-    with open(Var4UserEntry2+".key", 'rb') as filekey:
+    with open(res2x+".key", 'rb') as filekey:
         key = filekey.read()
     fernet = Fernet(key)
-    with open(Var4UserEntry2, 'rb') as file:
+    with open(res2x, 'rb') as file:
         original = file.read()
     encrypted = fernet.encrypt(original)
-    with open(Var4UserEntry2, 'wb') as encrypted_file:
+    with open(res2x, 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
-    pickl = open(Var4UserEntry2, "w")
+    a = 1
+    pickl = open(res2x+"Pickled", "wb")
     pickle.dump(original, pickl)
+    pickle.dump(res2x, pickl)
+    pickle.dump(a, pickl)
+    pickl.close()
     quit()
 
 def session():
@@ -719,9 +723,7 @@ def session():
 
 def Success():
     global User
-
     User = Username.get()
-    Pass = Password.get()
     global username1
     global password1
     username1 = Username.get()
@@ -734,7 +736,14 @@ def Success():
     Exist = os.path.exists("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password")
     global path
     path = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password")
+    p1ath = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
     if Exist == True:
+        os.chdir(p1ath)
+        pickledfile=open("ASEPickled", "rb")
+        newdict=pickle.load(pickledfile)
+        pickledfile.close()
+        print(newdict)
+        print(type(newdict))
         os.chdir(path)
         file1 = open(username1, "r")
         verify = file1.read().splitlines()
