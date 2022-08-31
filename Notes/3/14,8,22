@@ -1,0 +1,4 @@
+importing cryptography module to use encryption.
+encrypting works, now need to make it display when you view pass.
+made it display when viewing pass, now need to work on encrypting.
+Created entry for account password to see if the password is the real password, then it will decrpyt.

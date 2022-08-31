@@ -1,0 +1,5 @@
+Working on creating a temporary key that you need to use view password or delete password.
+Countdown for temporary key complete - however it stops counting when program is closed.
+Making a file to write countdown to, and then continue it when code is run again.
+Just realised that if i do that then the timer wont go on while the code isn't active.
+Searching on google how to create countdown while code isn't active.

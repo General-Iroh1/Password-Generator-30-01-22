@@ -1,0 +1,4 @@
+Made a button to confirm password - however, when the button is pressed, it always says its invalid.
+Realised copy button copys actual password when password is encrypted.
+Getting error that says token must be bytes - which means the thing you want to decode has to be a byte.
+Making a new def function to make it look like it decrpted when you enter the correct password.

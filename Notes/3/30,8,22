@@ -1,0 +1,7 @@
+Found out that if im going to encrypt at the end, i need to make it remeber the variable that has the original value in it when the code is run a different time.
+Encryption isn't working?
+ThE fUnCtIoN iS WoRkInG bUt ThE EnCrYpTiOn Is NoT!!!!
+Encryption works now.
+
+Next:
+    Make a pickle file where i can store the variable i need to save.

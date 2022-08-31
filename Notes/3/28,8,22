@@ -1,0 +1,9 @@
+Deleted tons of copy and pasted lines, because that was part of the previous encryption that has 0 preotection. 00:18:56
+When viewing files, it views it as blank.
+Also when new account is created, it will make an error when creating the 6 buttons
+When viewing passwords, whichever file is viewed first will always be viewed.
+Think i figured out why first file is always being viewed, I have set a variable to the first file and i assigned that to all the buttons. 00:34:52
+I was wrong, now its viewing everything as blank again 00:48:44
+
+Next:  
+    Fix the blanks.

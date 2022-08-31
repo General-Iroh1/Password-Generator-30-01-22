@@ -1,8 +1,10 @@
+import pickle
+from genericpath import exists
+from cryptography.fernet import Fernet
 from tkinter import *
 import os.path
 import os
 import shutil
-from unittest import TextTestResult
 reason = "google"
 counter = 1
 def back5():
@@ -64,8 +66,11 @@ def signup():
     Entry(screen13,textvariable=User).pack()
     Label(screen13,text="Password").pack()
     Entry(screen13,textvariable=Pass).pack()
+    Label(screen13,text="").pack()
     Button(screen13,text="Would you like to randomly generate a password?",command=randomgenerate1).pack()
+    Label(screen13,text="").pack()
     Button(screen13,text="Create account", command=createuser).pack()
+    Label(screen13,text="").pack()
     Button(screen13, text="Back", command= back5).pack()
 
 def delete5():
@@ -74,6 +79,8 @@ def delete5():
 def back10():
     screen17.destroy()
 
+
+
 def createuser():
     global screen14
     VarUser = User.get()
@@ -81,9 +88,11 @@ def createuser():
     folderpath = "d:/Applications/Vscode/Password Manager/"+VarUser
     exists2 = os.path.exists(folderpath)
     if exists2 == False:
-        screen14 = Toplevel(screen13)
+        screen14 = Toplevel(screen)
         screen14.title("Success")
         screen14.geometry("200x150")
+        Label(screen14, text = "Success!").pack()
+        Label(screen14, text="").pack()
         Button(screen14, text="OK", command=delete5).pack()
     VarUser = User.get()
     Var4Pass = Pass.get()
@@ -133,9 +142,6 @@ def save():
 
     saved()
 
-def back4():
-    screen6.destroy()
-
 def randomgenerate():
     import random
     randomlength = [8,9,10,11,12]
@@ -178,7 +184,12 @@ def copyandpaste1():
     screen6.clipboard_clear()
     screen6.clipboard_append(Varlist4letters)
 
+def back4():
+    screen6.destroy()
+    session()
+
 def createpass():
+    screen5.destroy()
     global filename
     global screen6
     filename = StringVar()
@@ -195,11 +206,16 @@ def createpass():
     Label(screen6,text = "").pack()
     Label(screen6,text = "Please enter a password: ").pack()
     Entry(screen6,textvariable=password).pack()
+    Label(screen6,text="").pack()
     Button(screen6, text="Create", command=save).pack()
     Label(screen6,text="").pack()
     Button(screen6, text="Back",command=back4).pack()
+    Label(screen6,text="").pack()
     Button(screen6,text="Would you like to randomly generate a password?",command=randomgenerate).pack()
     Label(screen6,text="").pack()
+
+
+
 
 def Login_Success():
     session()
@@ -226,69 +242,369 @@ def user_not_found():
     Button(screen4, text = "OK", command=delete4).pack()
     
 def back():
-    screen11.destroy()
+    screen19.destroy()
+    session()
 
-def back7():
-    screen9.destroy()
 
-def back9():
-    screen16.destroy()
+def back11():
+    screen18.destroy()
+    viewpass()
 
-def viewpass1():
-    global screen9
+def copy1():
+    screen18.clipboard_clear()
+    screen18.clipboard_append(filename1)
+def copy3():
+    screen36.clipboard_clear()
+    screen36.clipboard_append(data3)
+def copy2():
+    screen36.clipboard_clear()
+    screen36.clipboard_append(data13)
+def copy4():
+    screen35.clipboard_clear()
+    screen35.clipboard_append(data10)
+def copy5():
+    screen34.clipboard_clear()
+    screen34.clipboard_append(data11)
+def copy6():
+    screen33.clipboard_clear()
+    screen33.clipboard_append(data12)
+
+def viewpass2():
+    global screen18
+    global filename1
     filename1 = raw_filename.get()
     path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
     os.chdir(path0)
-    path1 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+filename1)
-    exists1 = os.path.exists(path1)
-    if exists1 == False:
-        global screen16
-        screen16 = Toplevel(screen1)
-        screen16.title("Incorrect name")
-        screen16.geometry("250x250")
-        Label(screen16, text="Sorry, you have typed a wrong name").pack()
-        Button(screen16, text="OK", command=back9).pack()
-    data = open (filename1, "r")
-    data1 = data.read()
-    screen9 = Toplevel(screen1)
-    screen9.title("Password view")
-    screen9.geometry("500x500")
-    Label(screen9, text=data1).pack()
-    Label(screen9,text="").pack()
-    Button(screen9, text="Back", command=back7).pack()
+    screen18 = Toplevel(screen)
+    screen18.title("Password view")
+    screen18.geometry("500x500")
+    file1 = open(res1x, "w+")
+    data6 = file1.read()
+    Label(screen18, text=data6).pack()
+    Label(screen18,text="").pack()
+    Button(screen18, text="Copy", command=copy1).pack()
+    Label(screen18,text="").pack()
+    Button(screen18, text="Back", command=back11).pack()
+    Label(screen18, text="")
+    Button(screen18, text="Quit", command=leave1).pack()
 
+
+def viewpass2x2():
+    global screen37
+    global filename1
+    filename1 = raw_filename.get()
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen37 = Toplevel(screen)
+    screen37.title("Password view")
+    screen37.geometry("500x500")
+    file1 = open(res2x, "w+")
+    file1.write(data13)
+    Label(screen37, text=data13).pack()
+    Label(screen37,text="").pack()
+    Button(screen37, text="Copy", command=copy1).pack()
+    Label(screen37,text="").pack()
+    Button(screen37, text="Back", command=back22).pack()
+    Label(screen37, text="")
+    Button(screen37, text="Quit", command=leave1).pack()
+
+def back22():
+    screen37.destroy()
+    viewpass()
+
+
+def viewpass2x3():
+    global screen36
+    global filename1
+    filename1 = raw_filename.get()
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen36 = Toplevel(screen)
+    screen36.title("Password view")
+    screen36.geometry("500x500")
+    file1 = open(res3x, "w")
+    file1.write(data3)
+    Label(screen36, text=data3).pack()
+    Label(screen36,text="").pack()
+    Button(screen36, text="Copy", command=copy1).pack()
+    Label(screen36,text="").pack()
+    Button(screen36, text="Back", command=back21).pack()
+    Label(screen36, text="")
+    Button(screen36, text="Quit", command=quit).pack()
+
+def back21():
+    screen36.destroy()
+    viewpass()
+
+
+def viewpass2x4():
+    global screen35
+    global filename1
+    filename1 = raw_filename.get()
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen35 = Toplevel(screen)
+    screen35.title("Password view")
+    screen35.geometry("500x500")
+    file1 = open(res4x, "w+")
+    file1.write(data10)
+    Label(screen35, text=data10).pack()
+    Label(screen35,text="").pack()
+    Button(screen35, text="Copy", command=copy1).pack()
+    Label(screen35,text="").pack()
+    Button(screen35, text="Back", command=back20).pack()
+    Label(screen35, text="")
+    Button(screen35, text="Quit", command=quit).pack()
+
+def back20():
+    screen35.destroy()
+    viewpass()
+
+
+def viewpass2x5():
+    global screen34
+    global filename1
+    filename1 = raw_filename.get()
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen34 = Toplevel(screen)
+    screen34.title("Password view")
+    screen34.geometry("500x500")
+    file1 = open(res5x, "w+")
+    file1.write(data11)
+    Label(screen34, text=data11).pack()
+    Label(screen34,text="").pack()
+    Button(screen34, text="Copy", command=copy1).pack()
+    Label(screen34,text="").pack()
+    Button(screen34, text="Back", command=back19).pack()
+    Label(screen34, text="")
+    Button(screen34, text="Quit", command=quit).pack()
+
+def back19():
+    screen34.destroy()
+    viewpass()
+
+
+def viewpass2x6():
+    global screen33
+    global filename1
+    filename1 = raw_filename.get()
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen33 = Toplevel(screen)
+    screen33.title("Password view")
+    screen33.geometry("500x500")
+    file1 = open(res6x, "w+")
+    file1.write(data12)
+    Label(screen33, text=data12).pack()
+    Label(screen33,text="").pack()
+    Button(screen33, text="Copy", command=copy1).pack()
+    Label(screen33,text="").pack()
+    Button(screen33, text="Back", command=back18).pack()
+    Label(screen33, text="")
+    Button(screen33, text="Quit", command=quit).pack()
+
+def back18():
+    screen33.destroy()
+    viewpass()
+
+def viewpass1():
+    screen8.destroy()
+    screen21.destroy()
+    global path0
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    global data3
+    data = open(res1x, "r+")
+    data3 = data.read()
+    viewpass2()
+
+def viewpass1x2():
+    screen8.destroy()
+    screen22.destroy()
+    global path0
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    data = open (res2x, "r+")
+    global data13
+    data13 = data.read()
+    viewpass2x2()
+
+def viewpass1x3():
+    screen8.destroy()
+    screen24.destroy()
+    data = open (res3x, "r")
+    global data3
+    data3 = data.read()
+    viewpass2x3()
+
+def viewpass1x4():
+    screen8.destroy()
+    screen25.destroy()
+    global path0
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    data = open (res4x, "r+")
+    global data10
+    data10 = data.read()
+    viewpass2x4()
+
+def viewpass1x5():
+    screen8.destroy()
+    screen26.destroy()
+    global path0
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    data = open (res5x, "r+")
+    global data11
+    data11 = data.read()
+    viewpass2x5()
+
+def back24():
+    viewpass()
+
+def viewpass1x6():
+    screen8.destroy()
+    screen27.destroy()
+    data = open (res1x, "r+")
+    global data12
+    data12 = data.read()
+    viewpass2x6()
+
+def back23():
+    viewpass()
 
 def back1():
     screen8.destroy()
+    session()
+    
+def res1():
+    global screen21
+    screen21 = Toplevel(screen)
+    screen21.geometry("300x300")
+    screen21.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res1x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1()
+
+def res2():
+    global screen22
+    screen22 = Toplevel(screen)
+    screen22.geometry("300x300")
+    screen22.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res2x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1x2()
+
+def res3():
+    global screen24
+    screen24 = Toplevel(screen)
+    screen24.geometry("300x300")
+    screen24.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res3x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1x3()
+
+def res4():
+    global screen25
+    screen25 = Toplevel(screen)
+    screen25.geometry("300x300")
+    screen25.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res4x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1x4()
+
+def res5():
+    global screen26
+    screen26 = Toplevel(screen)
+    screen26.geometry("300x300")
+    screen26.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res5x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1x5()
+
+def res6():
+    global screen27
+    screen27 = Toplevel(screen)
+    screen27.geometry("300x300")
+    screen27.title("View")
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    filename3 = res6x
+    file1 = open(filename3, "r")
+    global f1r
+    f1r =file1.read()
+    viewpass1x6()
+
+
 
 def viewpass():
     global screen8
-    screen8 = Toplevel(screen1)
+    screen5.destroy()
+    screen8 = Toplevel(screen)
     screen8.title("Password view")
     screen8.geometry("500x500")
     from os import walk
     res = []
     dir_path = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry
     for (dir_path, dir_names, file_names) in walk(dir_path):
-        res.extend(file_names)
-        break
+            res.extend(file_names)
+    global res1x
+    global res2x
+    global res3x
+    global res4x
+    global res5x
+    global res6x
+    res1x = res[0]
+    res2x = res[1]
+    res3x = res[2]
+    res4x = res[3]
+    res5x = res[4]
+    res6x = res[5]
     Label(screen8, text="Please select one of these files below(type it in the box).").pack()
-    Var4res = "\n".join(res)
-    Label(screen8,text=Var4res).pack()
+    Button(screen8,text=res1x,command=res1).pack()
+    Button(screen8,text=res2x,command=res2).pack()
+    Button(screen8,text=res3x,command=res3).pack()
+    Button(screen8,text=res4x,command=res4).pack()
+    Button(screen8,text=res5x,command=res5).pack()
+    Button(screen8,text=res6x,command=res6).pack()
     global raw_filename
     raw_filename = StringVar()
     Entry(screen8, textvariable=raw_filename).pack()
+    Label(screen8,text="").pack()
     Button(screen8,command=viewpass1, text = "OK").pack()
     Label(screen8,text="").pack()
     Button(screen8, text="Back",command=back1).pack()
 
 def back2():
     screen10.destroy()
+    session()
 
 def deletepass():
+    screen5.destroy()
     global screen10
-    screen10 = Toplevel(screen1)
-    screen10.title("Password view")
+    screen10 = Toplevel(screen)
+    screen10.title("Password delete")
     screen10.geometry("500x500")
     from os import walk
     res = []
@@ -296,24 +612,37 @@ def deletepass():
     for (dir_path, dir_names, file_names) in walk(dir_path):
         res.extend(file_names)
         break
+    res1x1 = res[0]
+    res1x2 = res[1]
+    res1x3 = res[2]
+    res1x4 = res[3]
+    res1x5 = res[4]
+    res1x6 = res[5]
     Label(screen10, text="Please select one of the files below to delete (type it in the box).").pack()
-    Var4res1 = "\n".join(res)
-    Label(screen10,text=Var4res1).pack()
+    Button(screen10,text=res1x1).pack()
+    Button(screen10,text=res1x2).pack()
+    Button(screen10,text=res1x3).pack()
+    Button(screen10,text=res1x4).pack()
+    Button(screen10,text=res1x5).pack()
+    Button(screen10,text=res1x6).pack()
     global raw_filename1
     raw_filename1 = StringVar()
-    Entry(screen10, textvariable=raw_filename1).pack()
-    Button(screen10,command=deletepass1, text = "OK").pack()
+    Label(screen10,text="").pack()
     Label(screen10,text="").pack()
     Button(screen10, text="Back",command=back2).pack()
 
 def back3():
-    screen11.destroy()
+    screen19.destroy()
 
 def back8():
     screen15.destroy()
+    deletepass()
 
 def deletepass1():
+    screen5.destroy()
+    screen10.destroy()
     global screen11
+    global filename2
     filename2 = raw_filename1.get()
     path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
     os.chdir(path0)
@@ -321,28 +650,70 @@ def deletepass1():
     exists1 = os.path.exists(path1)
     if exists1 == False:
         global screen15
-        screen15 = Toplevel(screen1)
+        screen15 = Toplevel(screen)
         screen15.title("Incorrect name")
         screen15.geometry("250x250")
         Label(screen15, text="Sorry, you have typed a wrong name").pack()
         Button(screen15, text="OK", command=back8).pack()
-    os.remove(filename2)
-    screen11 = Toplevel(screen1)
-    screen11.title("Password view")
-    screen11.geometry("500x500")
-    Label(screen11, text=filename2+" removed").pack()
-    Label(screen11,text="").pack()
-    Button(screen11, text="Back", command=back).pack()
+    data = open(filename1)
+    global data1
+    data1 = data
 
+
+def back12():
+    screen20.destroy()
+
+def Password_not_recognised1():
+    global screen20
+    screen20 = Toplevel(screen)
+    screen20.geometry("300x300")
+    screen20.title("Incorrect")
+    Label(screen20, text="Incorrect password")
+    Button(screen20, text= "OK", command=back12)
+def deletepass2():
+    global screen19
+    path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    os.chdir(path0)
+    screen19 = Toplevel(screen)
+    screen19.title("Password view")
+    screen19.geometry("500x500")
+    os.remove(filename2)
+    Label(screen19, text=filename2+" removed").pack()
+    Label(screen19,text="").pack()
+    Button(screen19, text="Back", command=back).pack()
+    Label(screen19,text="").pack()
+    Button(screen19, text="Back", command=quit).pack()
+
+def leave1():
+    key = Fernet.generate_key()
+    path2 = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry
+    os.chdir(path2)
+    with open(Var4UserEntry2+".key", 'wb') as filekey:
+        filekey.write(key)
+    with open(Var4UserEntry2+".key", 'rb') as filekey:
+        key = filekey.read()
+    fernet = Fernet(key)
+    with open(Var4UserEntry2, 'rb') as file:
+        original = file.read()
+    encrypted = fernet.encrypt(original)
+    with open(Var4UserEntry2, 'wb') as encrypted_file:
+        encrypted_file.write(encrypted)
+    pickl = open(Var4UserEntry2, "w")
+    pickle.dump(original, pickl)
+    quit()
 
 def session():
-    screen5 = Toplevel(screen1)
+    screen1.destroy()
+    global screen5
+    screen5 = Toplevel(screen)
     screen5.title("Password options")
     screen5.geometry("400x400")
     Label(screen5, text="Feel free to view any passwords.").pack()
     Button(screen5,text = "Create password", command=createpass).pack()
+    Label(screen5,text="").pack()
     Button(screen5,text = "View Passwords", command=viewpass).pack()
-    Button(screen5,text="Delete a password", command= deletepass ).pack()
+    Label(screen5,text="").pack()
+    Button(screen5,text="Delete a password", command= deletepass).pack()
 
 
 
@@ -396,6 +767,7 @@ def passwordview():
     Label(screen1, text = "Password * ").pack()
     Pass_Entry =Entry(screen1, textvariable=Password)
     Pass_Entry.pack()
+    Label(screen1,text="").pack()
     Button(screen1, text="Confirm", width = 10, height = 1, command =Success).pack()
     Label(screen1, text = "").pack()
     Button(screen1, text="Back", command= back6).pack()
@@ -416,5 +788,5 @@ def mainscreen():
     Button(text="Register", width="30", height="2",command= signup).pack()
     screen.mainloop()
 
-
+global all
 mainscreen()

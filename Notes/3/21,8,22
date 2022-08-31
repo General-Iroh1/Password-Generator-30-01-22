@@ -1,0 +1,11 @@
+Fixed create pass route
+working on fixing back buttons.
+I was trying to make an entirely new view pass function, and realised i could just use session() for back buttons.
+Fixed back buttons, however on delete pass screen, it isn't deleting the choice screen, even though i've written screen5.destroy()
+Made only one screen using withdraw.
+Getting an error when withdrawing, also you have to delete the terminal to launch the code again - guessing this is because of withdraw()
+Options screen wasn't deleting because i made a different session function that had the create pass back button inside it.
+
+
+Next:
+    Add only 2 screens when pressing the register button.

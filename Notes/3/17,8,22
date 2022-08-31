@@ -1,0 +1,6 @@
+Writing variable to file, so it looks like random letters and numbers, however, variable is set to nothing.
+Using debugger to see when file has something inside it, program removes the contents.
+Found out that i have set variable for writing to regular file - not encoded variable.
+
+Next:
+    Make file view encoded password by changing variable to encoded variable.

@@ -1,0 +1,7 @@
+Realised that register only has 1 screen.
+Working on making buttons to press to view.
+Creating 6 buttons for passwords.
+6 buttons work, it displays 6 files that are in the directory - if there are less than 6 files, that button will be empty.
+
+Next:
+    Make the buttons have functions

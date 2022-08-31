@@ -1,0 +1,6 @@
+Added function to button one, however it still has some errors.
+Need to create a new directory to store keys.
+Using same process as used in the create user process to make directory and files.
+
+Next:
+    Add function to rest of the buttons, and remove errors for empty buttons
