@@ -1,0 +1,8 @@
+Remembered that all files need to be encrypted.
+I HAVE ONLY ENCRYPTED ONE.
+ENCRYPTING ALL OF THEM WILL BE HELL.
+Using pickle to store variables
+When printing whats in the pickled file, it comes up as bytes.
+
+Next:
+    Make it view words - not bytes.

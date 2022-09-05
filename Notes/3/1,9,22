@@ -1,0 +1,8 @@
+tryed making encryption read regular words instead of bytes
+i didnt do anything and now its viewing a key
+testing making the thing i want to import into a set
+when making it into a set it views everything perfectly but i need it to be a string
+i think i can just write the variables to a file without pickle and then i will be able to extract it.
+
+next:
+    figure out how to make it view words not keys.

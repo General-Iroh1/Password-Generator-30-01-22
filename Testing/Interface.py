@@ -1,5 +1,3 @@
-import pickle
-from genericpath import exists
 from cryptography.fernet import Fernet
 from tkinter import *
 import os.path
@@ -7,6 +5,7 @@ import os
 import shutil
 reason = "google"
 counter = 1
+        
 def back5():
     screen13.destroy()
 
@@ -641,7 +640,6 @@ def back8():
 def deletepass1():
     screen5.destroy()
     screen10.destroy()
-    global screen11
     global filename2
     filename2 = raw_filename1.get()
     path0 = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
@@ -693,17 +691,18 @@ def leave1():
     with open(res2x+".key", 'rb') as filekey:
         key = filekey.read()
     fernet = Fernet(key)
-    with open(res2x, 'rb') as file:
+    with open(res2x, 'r') as file:
         original = file.read()
-    encrypted = fernet.encrypt(original)
+    with open (res2x, "rb") as file1:
+        original1 = file1.read()
+    encrypted = fernet.encrypt(original1)
     with open(res2x, 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
-    a = 1
-    pickl = open(res2x+"Pickled", "wb")
-    pickle.dump(original, pickl)
-    pickle.dump(res2x, pickl)
-    pickle.dump(a, pickl)
-    pickl.close()
+    filefororiginal = open(res2x+" Original", "w")
+    filefororiginal.write(original)
+    filefororiginal.write("\n")
+    filefororiginal.write(res2x)
+
     quit()
 
 def session():
@@ -736,14 +735,20 @@ def Success():
     Exist = os.path.exists("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password")
     global path
     path = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password")
-    p1ath = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry)
+    p1ath = ("D:/Applications/Vscode/Password Manager/As Account")
+    p2ath = os.path.exists("D:/Applications/Vscode/Password Manager/As Account/ER")
+    p1athE = os.path.exists("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+"ER Original")
     if Exist == True:
-        os.chdir(p1ath)
-        pickledfile=open("ASEPickled", "rb")
-        newdict=pickle.load(pickledfile)
-        pickledfile.close()
-        print(newdict)
-        print(type(newdict))
+        if p1athE == True:
+            os.chdir(p1ath)
+            OGfile=open("ER Original", "r")
+            OGFRead = OGfile.readlines()
+            OGFReadS = OGFRead[1]
+            OGfile.close()
+            os.chdir(path)
+            File=open(OGFReadS , "r")
+            print (OGFReadS)
+
         os.chdir(path)
         file1 = open(username1, "r")
         verify = file1.read().splitlines()
