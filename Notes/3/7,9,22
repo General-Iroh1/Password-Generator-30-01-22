@@ -1,0 +1,7 @@
+Fixed error, however, it is not writing the original to the file.
+Found out that it was writing to a different file.
+Finally, its writing to the correct file.
+It works now, but the file now has an exclamation mark next to it instead of the sign for a .txt file.
+
+Next:
+    Try to make it so it can use variables to recognise the file - so i don't have to keep changing the code.

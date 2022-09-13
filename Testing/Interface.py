@@ -1,3 +1,5 @@
+from pickle import PicklingError
+import pickle
 from cryptography.fernet import Fernet
 from tkinter import *
 import os.path
@@ -686,10 +688,6 @@ def leave1():
     key = Fernet.generate_key()
     path2 = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry
     os.chdir(path2)
-    with open(res2x+".key", 'wb') as filekey:
-        filekey.write(key)
-    with open(res2x+".key", 'rb') as filekey:
-        key = filekey.read()
     fernet = Fernet(key)
     with open(res2x, 'r') as file:
         original = file.read()
@@ -698,10 +696,17 @@ def leave1():
     encrypted = fernet.encrypt(original1)
     with open(res2x, 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
+    path3 = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password"
+    os.chdir(path3)
     filefororiginal = open(res2x+" Original", "w")
     filefororiginal.write(original)
     filefororiginal.write("\n")
+    global newline
+    newline = "\n"
     filefororiginal.write(res2x)
+    pickle.dump(res2x, filefororiginal)
+    pickle.dump(newline)
+    pickle.dump(original, filefororiginal)
 
     quit()
 
@@ -736,26 +741,30 @@ def Success():
     global path
     path = ("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password")
     p1ath = ("D:/Applications/Vscode/Password Manager/As Account")
-    p2ath = os.path.exists("D:/Applications/Vscode/Password Manager/As Account/ER")
-    p1athE = os.path.exists("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+"ER Original")
+    p2ath = ("D:/Applications/Vscode/Password Manager/As Account/As password")
+    p1athE = os.path.exists("d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password/"+"ER Original")
     if Exist == True:
-        if p1athE == True:
-            os.chdir(p1ath)
-            OGfile=open("ER Original", "r")
-            OGFRead = OGfile.readlines()
-            OGFReadS = OGFRead[1]
-            OGfile.close()
-            os.chdir(path)
-            File=open(OGFReadS , "r")
-            print (OGFReadS)
-
         os.chdir(path)
         file1 = open(username1, "r")
         verify = file1.read().splitlines()
         if password1 in verify:
             Login_Success()
+            if p1athE == True:
+                os.chdir(p2ath)
+                pickle.load("ER Original")
+                OGfile=open(res2x + "Original", "r")
+                OGFRead = OGfile.readlines()
+                OGFRead1 = OGFRead[1]
+                OGFRead0 = OGFRead[0]
+                print(OGFRead0)
+                OGfile.close()
+                print (OGFRead1)
+                os.chdir(p1ath)
+                f = open(OGFRead1, "w")
+                f.write(OGFRead0)
         else:
             Password_not_recognised()
+            
     if Exist == False:
         user_not_found()
 
