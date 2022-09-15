@@ -576,19 +576,32 @@ def viewpass():
     global res4x
     global res5x
     global res6x
-    res1x = res[0]
-    res2x = res[1]
-    res3x = res[2]
-    res4x = res[3]
-    res5x = res[4]
-    res6x = res[5]
-    Label(screen8, text="Please select one of these files below(type it in the box).").pack()
-    Button(screen8,text=res1x,command=res1).pack()
-    Button(screen8,text=res2x,command=res2).pack()
-    Button(screen8,text=res3x,command=res3).pack()
-    Button(screen8,text=res4x,command=res4).pack()
-    Button(screen8,text=res5x,command=res5).pack()
-    Button(screen8,text=res6x,command=res6).pack()
+    iteminres = len(res)
+    if iteminres > 1 or iteminres == 1:
+        res1x = res[0]
+    if iteminres > 2 or iteminres == 2:
+        res2x = res[1]
+    if iteminres > 3 or iteminres == 3:
+        res3x = res[2]
+    if iteminres > 4 or iteminres == 4:
+        res4x = res[3]
+    if iteminres > 5 or iteminres == 5:
+        res5x = res[4]
+    if iteminres > 6 or iteminres == 6:
+        res6x = res[5]
+    Button(screen8, text="Back",command=back1).pack()
+    if iteminres > 1 or iteminres == 1:
+        Button(screen8,text=res1x,command=res1).pack()
+    if iteminres > 2 or iteminres == 2:
+        Button(screen8,text=res2x,command=res2).pack()
+    if iteminres > 3 or iteminres == 3:
+        Button(screen8,text=res3x,command=res3).pack()
+    if iteminres > 4 or iteminres == 4:
+        Button(screen8,text=res4x,command=res4).pack()
+    if iteminres > 5 or iteminres == 5:
+        Button(screen8,text=res5x,command=res5).pack()
+    if iteminres > 6 or iteminres == 6:
+        Button(screen8,text=res6x,command=res6).pack()
     global raw_filename
     raw_filename = StringVar()
     Entry(screen8, textvariable=raw_filename).pack()
@@ -698,15 +711,13 @@ def leave1():
         encrypted_file.write(encrypted)
     path3 = "d:/Applications/Vscode/Password Manager/"+Var4UserEntry+"/"+Var4UserEntry2+"s password"
     os.chdir(path3)
-    filefororiginal = open(res2x+" Original", "w")
+    filefororiginal = open(Var4UserEntry2+" 1323553i12o4i32ork3o"+ " Original", "w")
     filefororiginal.write(original)
     filefororiginal.write("\n")
     global newline
     newline = "\n"
     filefororiginal.write(res2x)
-    pickle.dump(res2x, filefororiginal)
-    pickle.dump(newline)
-    pickle.dump(original, filefororiginal)
+
 
     quit()
 
@@ -751,8 +762,7 @@ def Success():
             Login_Success()
             if p1athE == True:
                 os.chdir(p2ath)
-                pickle.load("ER Original")
-                OGfile=open(res2x + "Original", "r")
+                OGfile=open(Var4UserEntry2+" 1323553i12o4i32ork3o"+" Original", "r")
                 OGFRead = OGfile.readlines()
                 OGFRead1 = OGFRead[1]
                 OGFRead0 = OGFRead[0]
